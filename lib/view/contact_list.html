@@ -1,0 +1,69 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+
+<polymer-element name="contact-list">
+  <template>
+    <style>
+      ul {
+        list-style: none;
+        padding: 2px;
+        text-align: left;
+      }
+      li {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 18px;
+      }
+      .button {
+        padding: 1px;
+        background: #ffcc99;
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+        border-style: outset;
+        border-color: #d7b9c9;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+    <h2>Web Contacts</h2>
+          <blink><font color="red"><label id="message"></label></font></blink>
+    <div>
+            <div>
+            <input id="name-label" value="Name" class="button" type="text"/>
+            <input id="phone-label" value="Phone" class="button" type="text"/>
+            <input id="email-label" value="Email" class="button" type="text"/>
+            </div>
+            <div>
+            <input id="name" type="text"/>
+            <input id="phone" type="text"/>
+            <input id="email" type="text"/>
+            <button on-click="{{add}}">Add</button>
+            <a href="javascript:window.location.reload()">
+            <button on-click="{{update}}">Update</button>
+            </a>
+            <button on-click="{{delete}}">Remove</button>
+            </div>   
+    </div>
+    <ul>
+      <template repeat="{{contact in contacts.internalList}}">
+            <!--{{contact.toString();}}-->
+            <div>
+            <input id="name-view" value={{contact.name}} disabled type="text"/>
+            <input id="phone-view" value={{contact.phone}} disabled type="text"/>
+            <input id="email-view" value={{contact.email}} disabled type="text"/>
+            <br/>
+            </div>
+      </template>
+      <br>
+      <div>
+           <input id="search" value="search contact" type="text"/>
+           <SELECT name="choice" id="choice" size="1">
+           <OPTION>Email
+           <OPTION>Name
+           <OPTION>Phone
+           </SELECT>
+           <button on-click="{{search}}">Search</button>
+      </div>
+    </ul>
+  </template>
+  <script type="application/dart" src="contact_list.dart"></script>
+</polymer-element>
