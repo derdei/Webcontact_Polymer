@@ -24,7 +24,7 @@
         text-align: center;
       }
     </style>
-    <h2>Web Contacts</h2>
+    <h2>TP2 SIO-6013</h2>
           <blink><font color="red"><label id="message"></label></font></blink>
     <div>
             <div>
@@ -55,12 +55,14 @@
       </template>
       <br>
       <div>
-           <input id="search" value="search contact" type="text"/>
-           <SELECT name="choice" id="choice" size="1">
-           <OPTION>Email
-           <OPTION>Name
-           <OPTION>Phone
-           </SELECT>
+           <input id="search" value="Name/Phone/Email" type="text"/>
+           <!--
+           <select name="choice" id="choice" size="1">
+           <option value="1">Email
+           <option value="2">Name
+           <option value="3">Phone
+           </select>
+           -->
            <button on-click="{{search}}">Search</button>
       </div>
     </ul>

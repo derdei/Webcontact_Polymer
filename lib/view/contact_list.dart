@@ -74,6 +74,12 @@ class ContactList extends PolymerElement {
     InputElement email = shadowRoot.querySelector("#email");
     LabelElement message = shadowRoot.querySelector("#message");
     InputElement search = shadowRoot.querySelector("#search");
+    var select = shadowRoot.querySelector("#choice"); 
+    
+       search.onClick.listen((e) {
+              search.value="";
+            });
+       
     message.text = '';
     Contact contact = contacts.find(search.value);
     if (contact == null) {

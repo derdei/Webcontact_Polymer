@@ -105,13 +105,27 @@ class Contacts {
   }
         
   
-  Contact find(String email) {
+  Contact find(String txtSearch) {
     for (Contact contact in _list) {
-      if (contact.email == email) return contact;
+      if ((contact.email == txtSearch) || (contact.phone == txtSearch)||(contact.name == txtSearch))
+        return contact;    
+      }
+    return null;
+  }
+  
+  Contact findPhone(String phone) {
+    for (Contact contact in _list) {
+      if (contact.phone == phone) return contact;
     }
     return null;
   }
   
+  Contact findName(String name) {
+    for (Contact contact in _list) {
+      if (contact.name == name) return contact;
+    }
+    return null;
+  }
   
   bool remove(Contact contact) {
     return _list.remove(contact);
