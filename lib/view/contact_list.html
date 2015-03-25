@@ -26,6 +26,8 @@
     </style>
     <h2>TP2 SIO-6013</h2>
           <blink><font color="red"><label id="message"></label></font></blink>
+                     <label id="msg"></label>
+          
     <div>
             <div>
             <input id="name-label" value="Name" class="button" type="text"/>
@@ -55,14 +57,15 @@
       </template>
       <br>
       <div>
-           <input id="search" value="Name/Phone/Email" type="text"/>
-           <!--
-           <select name="choice" id="choice" size="1">
+          <form>
+           <input type="text" id="choice" value="Email" hidden/>
+           <input id="search" value="search..." on-click="{{searchtxt}}"/>
+           <select size="1" id="liste" onchange="this.form.choice.value=this.options[this.selectedIndex].text;">
            <option value="1">Email
            <option value="2">Name
            <option value="3">Phone
            </select>
-           -->
+           </form>           
            <button on-click="{{search}}">Search</button>
       </div>
     </ul>

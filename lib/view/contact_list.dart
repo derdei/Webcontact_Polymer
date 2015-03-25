@@ -6,7 +6,8 @@ import 'package:agenda/agenda.dart';
 @CustomTag('contact-list')
 class ContactList extends PolymerElement {
   @published Contacts contacts;
-  
+
+       
   ContactList.created() : super.created();
   add(Event e, var detail, Node target) {
     InputElement name = shadowRoot.querySelector("#name");
@@ -67,29 +68,40 @@ class ContactList extends PolymerElement {
       }
     }
   }
-  
+ 
+  searchtxt(Event e, var detail, Node target) {
+      InputElement search = shadowRoot.querySelector("#search");
+      search.value="";
+    }
+ 
+
   search(Event e, var detail, Node target) {
     InputElement name = shadowRoot.querySelector("#name");
     InputElement phone = shadowRoot.querySelector("#phone");
     InputElement email = shadowRoot.querySelector("#email");
     LabelElement message = shadowRoot.querySelector("#message");
-    InputElement search = shadowRoot.querySelector("#search");
-    var select = shadowRoot.querySelector("#choice"); 
+    InputElement searchinfo = shadowRoot.querySelector("#search");
     
-       search.onClick.listen((e) {
-              search.value="";
-            });
-       
     message.text = '';
-    Contact contact = contacts.find(search.value);
-    if (contact == null) {
-      message.text = 'web contact with this email does not exist';
-    } else {
-      name.value = contact.name;
-      phone.value = contact.phone;
-      email.value = contact.email;
-      email.disabled=true;
+    Contact contact;
+    
+    LabelElement msg = shadowRoot.querySelector("#msg");
+         InputElement choice = shadowRoot.querySelector("#choice");
+         var linkMessage = ' whit this ';         
+    switch(choice.value){
+      case "Email": contact = contacts.find(searchinfo.value); break;
+      case "Name":  contact = contacts.findName(searchinfo.value);break;
+      case "Phone": contact = contacts.findPhone(searchinfo.value); break;
     }
+    if (contact == null) {
+   message.text = 'web contact does not exist'+linkMessage+choice.value;
+   } else {
+   name.value = contact.name;
+   phone.value = contact.phone;
+   email.value = contact.email;
+   email.disabled=true;
+   }
+    
   }
 
   update (Event e, var detail, Node target) {

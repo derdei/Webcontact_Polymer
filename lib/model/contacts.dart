@@ -105,9 +105,9 @@ class Contacts {
   }
         
   
-  Contact find(String txtSearch) {
+  Contact find(String email) {
     for (Contact contact in _list) {
-      if ((contact.email == txtSearch) || (contact.phone == txtSearch)||(contact.name == txtSearch))
+      if (contact.email == email)
         return contact;    
       }
     return null;
