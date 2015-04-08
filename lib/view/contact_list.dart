@@ -125,7 +125,7 @@ class ContactList extends PolymerElement {
    phone.value = contact.phone;
    email.value = contact.email;
    email.disabled=true;
-   newAdd.text="newAdd";
+   newAdd.text="newContact";
    }
     
   }
