@@ -90,6 +90,7 @@ class ContactList extends PolymerElement {
       phone.value = "";
       email.value = "";
       email.disabled = false;
+      newAdd.text="Add";
       }
     }
   }
