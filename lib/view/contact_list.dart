@@ -14,9 +14,13 @@ class ContactList extends PolymerElement {
     InputElement phone = shadowRoot.querySelector("#phone");
     InputElement email = shadowRoot.querySelector("#email");
     LabelElement message = shadowRoot.querySelector("#message");
+
     var error = false;
     message.text = '';
-    if (name.value.trim() == '') {
+      
+    if(!email.disabled){
+      
+      if (name.value.trim() == '') {
       message.text = 'name is mandatory; ${message.text}';
       error = true;
     }
@@ -33,6 +37,18 @@ class ContactList extends PolymerElement {
             error = true;
           }
     
+    Contact contactName = contacts.findName(name.value);
+       if (contactName != null) {
+         message.text = 'web contact with that name already exists; ${message.text}';
+         error = true;
+       }
+       
+       Contact contactPhone = contacts.findPhone(phone.value);
+              if (contactPhone != null) {
+                message.text = 'web contact with that phone already exists; ${message.text}';
+                error = true;
+              }
+    
     if ((!error) && (validateEmail(email.value))){
       var contact = new Contact(name.value, phone.value,email.value);
       if (contacts.add(contact)) {
@@ -45,7 +61,14 @@ class ContactList extends PolymerElement {
         message.text = 'web contact with that email already exists';
       }
     }
+    
+    }else
+    {
+      loadPage();
+    }
   }
+    
+    
   
   delete(Event e, var detail, Node target) {
     InputElement name = shadowRoot.querySelector("#name");
@@ -81,6 +104,8 @@ class ContactList extends PolymerElement {
     InputElement email = shadowRoot.querySelector("#email");
     LabelElement message = shadowRoot.querySelector("#message");
     InputElement searchinfo = shadowRoot.querySelector("#search");
+    ButtonElement newAdd = shadowRoot.querySelector("#add");
+
     
     message.text = '';
     Contact contact;
@@ -100,6 +125,7 @@ class ContactList extends PolymerElement {
    phone.value = contact.phone;
    email.value = contact.email;
    email.disabled=true;
+   newAdd.text="newAdd";
    }
     
   }
