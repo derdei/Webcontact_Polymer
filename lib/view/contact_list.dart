@@ -14,6 +14,7 @@ class ContactList extends PolymerElement {
     InputElement phone = shadowRoot.querySelector("#phone");
     InputElement email = shadowRoot.querySelector("#email");
     LabelElement message = shadowRoot.querySelector("#message");
+    ButtonElement newAdd = shadowRoot.querySelector("#add");
 
     var error = false;
     message.text = '';
@@ -65,6 +66,7 @@ class ContactList extends PolymerElement {
     }else
     {
       loadPage();
+      newAdd.text="Add";
     }
   }
     
