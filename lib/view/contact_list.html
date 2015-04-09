@@ -45,9 +45,9 @@
             </div>
             <div>
             <button id="add" on-click="{{add}}">Add</button>
-            <a href="javascript:window.location.reload()">
+            <a href="javascript:window.location.reload()"></a>
             <button id="update" on-click="{{update}}" disabled>Update</button>
-            </a>
+            
             <button id="remove" on-click="{{delete}}" disabled>Remove</button>
             </div>   
     </div>
@@ -57,7 +57,7 @@
             <div>
             <input id="name-view" value={{contact.name}} disabled type="text" style="border:solid 1px white; text-transform:uppercase; font-weight:bold; color:black;"/>
             <input id="phone-view" value={{contact.phone}} disabled type="text" style="border:solid 1px white; text-transform:uppercase; font-weight:bold; color:black;"/>
-            <input id="email-view" value={{contact.email}} disabled type="text" style="border:solid 1px white; text-transform:uppercase; font-weight:bold; color:black;"/>
+            <input id="email-view" value={{contact.email}} disabled type="text" style="border:solid 1px white; text-transform:lowercase; font-weight:bold; color:red;"/>
             </div>
       </template>
       <br>

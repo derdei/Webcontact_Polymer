@@ -146,19 +146,36 @@ class ContactList extends PolymerElement {
   update (Event e, var detail, Node target) {
     LabelElement message = shadowRoot.querySelector("#message");
     InputElement email = shadowRoot.querySelector("#email");
-        message.text = '';
-        Contact contact = contacts.find(email.value);
-        if (contact == null) {
-          message.text = 'web contact with this email does not exist';
-        } else {
     InputElement name = shadowRoot.querySelector("#name");
     InputElement phone = shadowRoot.querySelector("#phone");
-    InputElement email = shadowRoot.querySelector("#email");
-    Contact contact = contacts.find(email.value);
-    contact.name = name.value;
-    contact.phone = phone.value;
-    save();
-    loadPage();
+       
+        message.text = '';
+        var error = true;
+        Contact contact = contacts.find(email.value);
+        if (contact != null) {
+          if (name.value.trim() == '') {
+                message.text = 'name is mandatory; ${message.text}';
+                error = false;
+              }
+              if (phone.value.trim() == '') {
+                message.text = 'phone is mandatory; ${message.text}';
+                error = false;
+              }
+              if (email.value.trim() == '') {
+                   message.text = 'email is mandatory; ${message.text}';
+                   error = false;
+                 }
+                   
+               } 
+        if(error){
+             Contact contact = contacts.find(email.value);
+             contact.name = name.value;
+             contact.phone = phone.value;
+             save();
+             loadPage();
+        }
+        else {
+          message.text = message.text;
     }
   }
   

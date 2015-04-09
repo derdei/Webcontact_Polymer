@@ -86,12 +86,12 @@ class Contacts {
   List<Contact> get internalList => _list;
   set internalList(List<Contact> observableList) => _list = observableList;
 
-  init() {
-    var contact1 = new Contact('Dia', '514-777-5509','dia@ulaval.ca');
-    var contact2 = new Contact('Dzenan', '418-777-5509','dzenan@ulaval.ca');
-    var contact3 = new Contact('Ali', '581-777-5509','ali@ulaval.ca');
-    this..add(contact1)..add(contact2)..add(contact3); 
-  }
+//  init() {
+//    var contact1 = new Contact('DIA', '514-777-5509','dia@ulaval.ca');
+//    var contact2 = new Contact('DZENAN', '418-777-5509','dzenan@ulaval.ca');
+//    var contact3 = new Contact('ALI', '581-777-5509','ali@ulaval.ca');
+//    this..add(contact1)..add(contact2)..add(contact3); 
+//  }
   
   bool add(Contact newContact) {
     if (newContact == null) {
