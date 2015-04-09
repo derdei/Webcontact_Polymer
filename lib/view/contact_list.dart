@@ -165,6 +165,19 @@ class ContactList extends PolymerElement {
                    message.text = 'email is mandatory; ${message.text}';
                    error = false;
                  }
+              
+              Contact contactName = contacts.findName(name.value);
+                     if ((contactName != null)&&(email.value!=contactName.email)) {
+                       message.text = 'web contact with that name already exists; ${message.text}';
+                       error = false;
+                     }
+                     
+                     Contact contactPhone = contacts.findPhone(phone.value);
+                            if ((contactPhone != null)&&(email.value!=contactPhone.email)) {
+                              message.text = 'web contact with that phone already exists; ${message.text}';
+                              error = false;
+                            }
+                      
                    
                } 
         if(error){
