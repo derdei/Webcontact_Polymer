@@ -66,7 +66,6 @@ class ContactList extends PolymerElement {
     }else
     {
       loadPage();
-      newAdd.text="Add";
     }
   }
     
