@@ -30,14 +30,20 @@
           
     <div>
             <div>
-            <input id="name-label" value="Name" class="button" type="text"/>
-            <input id="phone-label" value="Phone" class="button" type="text"/>
-            <input id="email-label" value="Email" class="button" type="text"/>
+            <table>
+            <tr>
+            <td><input id="name-label" value="Name"  type="text"  disabled/></td>
+            <td><input id="phone-label" value="Phone" type="text" disabled/></td>
+            <td><input id="email-label" value="Email" type="text" disabled/></td>
+            </tr>
+            <tr>
+            <td><input id="name" type="text"/></td>
+            <td><input id="phone" type="text"/></td>
+            <td><input id="email" type="text"/></td>
+            </tr>
+            </table>
             </div>
             <div>
-            <input id="name" type="text"/>
-            <input id="phone" type="text"/>
-            <input id="email" type="text"/>
             <button id="add" on-click="{{add}}">Add</button>
             <a href="javascript:window.location.reload()">
             <button on-click="{{update}}">Update</button>
