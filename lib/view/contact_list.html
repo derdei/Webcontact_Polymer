@@ -32,14 +32,14 @@
             <div>
             <table>
             <tr>
-            <td><input id="name-label" value="Name"  type="text"  style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:steelblue;" disabled/></td>
-            <td><input id="phone-label" value="Phone" type="text" style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:steelblue;" disabled/></td>
-            <td><input id="email-label" value="Email" type="text" style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:steelblue;" disabled/></td>
+            <td><input id="name-label" value="Name"  type="text"  style="border:solid 1px white; text-transform:uppercase; font-weight:bold; color:steelblue  ;" disabled/></td>
+            <td><input id="phone-label" value="Phone" type="text" style="border:solid 1px white; text-transform:uppercase; font-weight:bold; color:steelblue;" disabled/></td>
+            <td><input id="email-label" value="Email" type="text" style="border:solid 1px white; text-transform:uppercase; font-weight:bold; color:steelblue;" disabled/></td>
             </tr>
             <tr>
-            <td><input id="name" type="text" onFocus="this.style.backgroundColor='red'" onBlur="this.style.backgroundColor='white'" style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:steelblue;"/></td>
-            <td><input id="phone" type="text" onFocus="this.style.backgroundColor='red'" onBlur="this.style.backgroundColor='white'" style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:steelblue;"/></td>
-            <td><input id="email" type="text" onFocus="this.style.backgroundColor='red'" onBlur="this.style.backgroundColor='white'" style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:steelblue;"/></td>
+            <td><input id="name" type="text" onFocus="this.style.backgroundColor='yellow'" onBlur="this.style.backgroundColor='white'" style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:steelblue;"/></td>
+            <td><input id="phone" type="text" onFocus="this.style.backgroundColor='yellow'" onBlur="this.style.backgroundColor='white'" style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:steelblue;"/></td>
+            <td><input id="email" type="text" onFocus="this.style.backgroundColor='yellow'" onBlur="this.style.backgroundColor='white'" style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:red;"/></td>
             </tr>
             </table>
             </div>
@@ -55,17 +55,16 @@
       <template repeat="{{contact in contacts.internalList}}">
             <!--{{contact.toString();}}-->
             <div>
-            <input id="name-view" value={{contact.name}} disabled type="text"/>
-            <input id="phone-view" value={{contact.phone}} disabled type="text"/>
-            <input id="email-view" value={{contact.email}} disabled type="text"/>
-            <br/>
+            <input id="name-view" value={{contact.name}} disabled type="text" style="border:solid 1px white; text-transform:uppercase; font-weight:bold; color:black;"/>
+            <input id="phone-view" value={{contact.phone}} disabled type="text" style="border:solid 1px white; text-transform:uppercase; font-weight:bold; color:black;"/>
+            <input id="email-view" value={{contact.email}} disabled type="text" style="border:solid 1px white; text-transform:uppercase; font-weight:bold; color:black;"/>
             </div>
       </template>
       <br>
       <div>
           <form>
            <input type="text" id="choice" value="Email" hidden/>
-           <input id="search" value="search..." on-click="{{searchtxt}}"/>
+           <input id="search" value="search..." on-click="{{searchtxt}}" type="text" style="border:solid 1px steelblue; text-transform:uppercase; font-weight:bold; color:steelblue;"/>
            <select size="1" id="liste" onchange="this.form.choice.value=this.options[this.selectedIndex].text;">
            <option value="1">Email
            <option value="2">Name
