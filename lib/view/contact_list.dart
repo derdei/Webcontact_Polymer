@@ -77,7 +77,9 @@ class ContactList extends PolymerElement {
     InputElement email = shadowRoot.querySelector("#email");
     LabelElement message = shadowRoot.querySelector("#message");
     ButtonElement newAdd = shadowRoot.querySelector("#add");
-
+    ButtonElement update = shadowRoot.querySelector("#update");
+    ButtonElement remove = shadowRoot.querySelector("#remove");
+        
     message.text = '';
     Contact contact = contacts.find(email.value);
     if (contact == null) {
@@ -91,6 +93,8 @@ class ContactList extends PolymerElement {
       phone.value = "";
       email.value = "";
       email.disabled = false;
+      update.disabled=true;
+      remove.disabled=true;
       newAdd.text="Add";
       }
     }
@@ -109,6 +113,9 @@ class ContactList extends PolymerElement {
     LabelElement message = shadowRoot.querySelector("#message");
     InputElement searchinfo = shadowRoot.querySelector("#search");
     ButtonElement newAdd = shadowRoot.querySelector("#add");
+    ButtonElement update = shadowRoot.querySelector("#update");
+    ButtonElement remove = shadowRoot.querySelector("#remove");
+
 
     
     message.text = '';
@@ -129,6 +136,8 @@ class ContactList extends PolymerElement {
    phone.value = contact.phone;
    email.value = contact.email;
    email.disabled=true;
+   update.disabled=false;
+   remove.disabled=false;
    newAdd.text="newContact";
    }
     
