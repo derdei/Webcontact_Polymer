@@ -1,13 +1,6 @@
-# Agenda
-# WebContact
+# SIO-6013
+# TP2
 
-A starter template for a polymer.dart web app.
-
-## Creating new elements
-
-The `polymer` package includes a utility to generate new elements. From
-within this project, run:
-
-`pub run polymer:new_element <name>`
+## WebContact whit Polymer
 
 ### mahamat.ali.derdei@gmail.com
