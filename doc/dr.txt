@@ -5,3 +5,4 @@ ex08
 (-2)
 'Search' par le nom ne marche pas.
 
+Le texte dans la fonction init est en miniscule merci de vérifier en miniscule ou avec un nouveau contact.
